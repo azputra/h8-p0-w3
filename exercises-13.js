@@ -14,25 +14,17 @@ function targetTerdekat(arr) {
             // console.log(posisiX)
         }
     }
-    var targetDekat = []
+    var targetDekat = 0;
     for (let k = 0; k < posisiX.length; k++) {
-        targetDekat.push(Math.abs(posisiO-posisiX[k]))
-        // console.log(targetDekat)
+        var positifNum = (Math.abs(posisiO-posisiX[k]))
+        if (targetDekat === 0) {
+            targetDekat = positifNum
+        } else if (targetDekat > positifNum) {
+            targetDekat = positifNum
+        }
     }
-    var tempTerdekat = targetDekat[0]
-    // console.log(targetDekat)
-    if (targetDekat.length === 0) {
-        return 0
-    } else {
-        for (let l = 0; l < targetDekat.length; l++) {
-            if (tempTerdekat > targetDekat[l]) {
-                tempTerdekat = targetDekat[l]
-            }
-        } // console.log(tempTerdekat)
-    } 
-    return tempTerdekat
-  }
-  
+    return targetDekat
+}
   // TEST CASES
   console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
   console.log(targetTerdekat(['o', ' ', ' ', ' ', 'x', 'x', 'x'])); // 4
