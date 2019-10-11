@@ -2,11 +2,12 @@ function hitungJumlahKata(kalimat) {
     // you can only write your code here!
     var arr = [];
     var str = "";
-    for (var i = 0; i < kalimat.length - 1; i++) {
-        if (kalimat[i] !== " ") {
-            str += kalimat[i];
+    var newKalimat = kalimat.trim()
+    for (var i = 0; i < newKalimat.length; i++) {
+        if (newKalimat[i] !== " ") {
+            str += newKalimat[i];
         }
-        if (kalimat[i] === " " && str.length >= 1) {
+        if (newKalimat[i] === " ") {
             arr.push(str);
             str = "";
         }
@@ -16,7 +17,7 @@ function hitungJumlahKata(kalimat) {
 }
 
 // TEST CASES
-console.log(hitungJumlahKata(' I have a dream')); // 4
+console.log(hitungJumlahKata('I have a dream')); // 4
 console.log(hitungJumlahKata('Never eat shredded wheat or cake')); // 6
 console.log(hitungJumlahKata('A song to sing')); // 4
 console.log(hitungJumlahKata('I')); // 1
