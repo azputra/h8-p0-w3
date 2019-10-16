@@ -1,19 +1,14 @@
 function hitungJumlahKata(kalimat) {
     // you can only write your code here!
-    var arr = [];
-    var str = "";
+    var num = 0;
     for (var i = 0; i < kalimat.length; i++) {
         if (kalimat.length - 1 === i && kalimat[i] !== " ") {
-            arr.push(str)
-            str = ""
+            num++
         } else if (kalimat[i] !== " " && kalimat[i + 1] === " ") {
-            arr.push(str)
-            str = ""
-        } else {
-            str += kalimat[i]
+            num++
         }
     }
-    return arr.length
+    return num
 }
 
 // TEST CASES
