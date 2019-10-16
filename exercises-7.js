@@ -2,22 +2,22 @@ function hitungJumlahKata(kalimat) {
     // you can only write your code here!
     var arr = [];
     var str = "";
-    var newKalimat = kalimat.trim()
-    for (var i = 0; i < newKalimat.length; i++) {
-        if (newKalimat[i] !== " ") {
-            str += newKalimat[i];
-        }
-        if (newKalimat[i] === " ") {
-            arr.push(str);
-            str = "";
+    for (var i = 0; i < kalimat.length; i++) {
+        if (kalimat.length - 1 === i && kalimat[i] !== " ") {
+            arr.push(str)
+            str = ""
+        } else if (kalimat[i] !== " " && kalimat[i + 1] === " ") {
+            arr.push(str)
+            str = ""
+        } else {
+            str += kalimat[i]
         }
     }
-    arr.push(str);
     return arr.length
 }
 
 // TEST CASES
-console.log(hitungJumlahKata('I have a dream')); // 4
+console.log(hitungJumlahKata('          I     have  a  dream       ')); // 4
 console.log(hitungJumlahKata('Never eat shredded wheat or cake')); // 6
 console.log(hitungJumlahKata('A song to sing')); // 4
 console.log(hitungJumlahKata('I')); // 1

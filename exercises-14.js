@@ -1,19 +1,19 @@
 function mengelompokkanAngka(arr) {
   // you can only write your code here!
   const newArr = [];
-  const genap = [];
-  const ganjil = [];
   const kelipatanTiga = [];
+  const ganjil = [];
+  const genap = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 3 === 0) {
-      genap.push(arr[i])
-    } else if (arr[i] % 2 === 0) {
       kelipatanTiga.push(arr[i])
+    } else if (arr[i] % 2 === 0) {
+      genap.push(arr[i])
     } else {
       ganjil.push(arr[i])
     }
   }
-  newArr.push(kelipatanTiga, ganjil, genap)
+  newArr.push(genap, ganjil, kelipatanTiga)
   return newArr
 }
 
